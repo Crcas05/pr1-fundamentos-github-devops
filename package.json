@@ -1,0 +1,11 @@
+{
+  "name": "devops-lab",
+  "version": "1.0.0",
+  "description": "Proyecto laboratorio GitHub Actions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Cris",
+  "license": "MIT"
+}
