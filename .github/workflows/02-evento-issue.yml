@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mensaje
-        run: echo "Se creó un nuevo issue"
+      - name: Hola Mundo
+        run: echo "Hola Mundo, el usuario creó un nuevo issue"
