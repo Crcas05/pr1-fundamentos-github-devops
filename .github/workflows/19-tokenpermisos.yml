@@ -1,0 +1,19 @@
+name: 19-tokenpermisos
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  permisos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar uso del token
+        run: echo "El workflow tiene permisos configurados para el GITHUB_TOKEN"

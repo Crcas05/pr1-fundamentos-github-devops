@@ -1,0 +1,17 @@
+name: 10-entrada-salida
+
+on:
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: "Ingrese su nombre"
+        required: true
+        default: "DevOps"
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar saludo
+        run: echo "Hola ${{ github.event.inputs.nombre }}"

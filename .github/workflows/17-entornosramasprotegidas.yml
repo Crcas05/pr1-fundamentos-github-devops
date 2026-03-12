@@ -1,0 +1,14 @@
+name: 17-entornosramasprotegidas
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  proteccion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar rama protegida
+        run: echo "Este workflow se ejecuta solo en la rama main protegida"

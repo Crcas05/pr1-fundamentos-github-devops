@@ -1,0 +1,18 @@
+name: 05-instalar-paquetes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  instalar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Actualizar repositorios
+        run: sudo apt update
+
+      - name: Instalar paquete tree
+        run: sudo apt install tree -y
+
+      - name: Mostrar estructura del proyecto
+        run: tree

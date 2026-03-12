@@ -1,0 +1,15 @@
+name: 16-usodeentornos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: desarrollo
+
+    steps:
+      - name: Simular despliegue
+        run: echo "Desplegando en entorno de desarrollo"

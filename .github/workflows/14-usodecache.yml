@@ -1,0 +1,23 @@
+name: 14-usodecache
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cache-ejemplo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Cache de dependencias
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-cache-${{ runner.os }}
+          restore-keys: |
+            npm-cache-
+
+      - name: Instalar dependencias
+        run: npm install

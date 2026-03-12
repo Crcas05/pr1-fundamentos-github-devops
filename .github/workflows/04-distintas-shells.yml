@@ -1,0 +1,22 @@
+name: 04-distintas-shells
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probar-shells:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ejecutar en Bash
+        run: echo "Hola desde Bash"
+
+      - name: Ejecutar en PowerShell
+        shell: pwsh
+        run: Write-Host "Hola desde PowerShell"
+
+      - name: Ejecutar múltiples comandos
+        run: |
+          echo "Primer comando"
+          echo "Segundo comando"
+          echo "Tercer comando"

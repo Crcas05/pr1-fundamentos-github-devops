@@ -1,0 +1,27 @@
+name: 03-node-js-build-external
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  node-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Ver versión Node
+        run: node -v
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar aplicación
+        run: node index.js

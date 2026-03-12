@@ -1,0 +1,19 @@
+name: 15-usodeartefactos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generar-artefacto:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Crear archivo
+        run: echo "Este es un archivo generado por el pipeline" > archivo.txt
+
+      - name: Subir artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: archivo-generado
+          path: archivo.txt

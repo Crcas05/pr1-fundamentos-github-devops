@@ -1,0 +1,24 @@
+name: 11-pasarvalores-jobs
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      mensaje: ${{ steps.generar.outputs.resultado }}
+
+    steps:
+      - name: Generar mensaje
+        id: generar
+        run: echo "resultado=Hola desde el Job 1" >> $GITHUB_OUTPUT
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+
+    steps:
+      - name: Mostrar mensaje recibido
+        run: echo "Mensaje recibido -> ${{ needs.job1.outputs.mensaje }}"

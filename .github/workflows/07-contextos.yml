@@ -1,0 +1,24 @@
+name: 07-contextos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mostrar-contextos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar actor
+        run: echo "Actor -> ${{ github.actor }}"
+
+      - name: Mostrar repositorio
+        run: echo "Repositorio -> ${{ github.repository }}"
+
+      - name: Mostrar evento que disparó el workflow
+        run: echo "Evento -> ${{ github.event_name }}"
+
+      - name: Mostrar sistema operativo del runner
+        run: echo "Sistema operativo -> ${{ runner.os }}"
+
+      - name: Mostrar arquitectura del runner
+        run: echo "Arquitectura -> ${{ runner.arch }}"

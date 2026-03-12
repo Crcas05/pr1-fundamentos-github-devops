@@ -1,0 +1,13 @@
+name: 02-evento-issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  evento-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mensaje
+        run: echo "Se creó un nuevo issue"

@@ -1,0 +1,24 @@
+name: 13-funcionesverificacionestado
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verificacion:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Paso correcto
+        run: echo "Todo funciona bien"
+
+      - name: Paso que falla
+        run: exit 1
+
+      - name: Ejecutar si falla
+        if: failure()
+        run: echo "El paso anterior falló"
+
+      - name: Ejecutar siempre
+        if: always()
+        run: echo "Este paso siempre se ejecuta"

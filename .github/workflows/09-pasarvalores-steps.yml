@@ -1,0 +1,17 @@
+name: 09-pasarvalores-steps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pasos:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Paso 1 - generar valor
+        id: paso1
+        run: echo "resultado=Hola desde paso 1" >> $GITHUB_OUTPUT
+
+      - name: Paso 2 - usar valor
+        run: echo "El valor recibido es ${{ steps.paso1.outputs.resultado }}"

@@ -1,0 +1,21 @@
+name: 06-expresiones-contextos-funciones
+
+on:
+  workflow_dispatch:
+
+jobs:
+  contexto:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar usuario que ejecuta el workflow
+        run: echo "Actor -> ${{ github.actor }}"
+
+      - name: Mostrar repositorio
+        run: echo "Repositorio -> ${{ github.repository }}"
+
+      - name: Mostrar nombre del workflow
+        run: echo "Workflow -> ${{ github.workflow }}"
+
+      - name: Mostrar sistema operativo del runner
+        run: echo "Runner OS -> ${{ runner.os }}"
